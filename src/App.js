@@ -1,18 +1,15 @@
 import './App.css';
-import GoogleMap from './api/GoogleMap'
+import { useLoadScript } from "@react-google-maps/api";
+// import Map from './api/googlemap';
+import Places from './api/places';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Charge&Go</h1>
-      <body>
-        <div id= "map">
-          <GoogleMap />
-        </div>        
-      </body>
-      
-    </div>
-  );
+
+export default function Home() {
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: "AIzaSyAPAOwoCOwvLzHDrtDUToJUb3Fx8xUV_jg",
+  });
+
+  if (!isLoaded) return <div>Loading...</div>;
+  return <Places/ >;
+
 }
-
-export default App;
