@@ -1,14 +1,25 @@
+import { useState } from "react";
+import { GoogleMap, Marker } from "@react-google-maps/api";
+import PlacesAutocomplete from "./PlacesAutocomplete";
 
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+function Map() {
+  const [center, setCenter] = useState({ lat: 51.5072, lng: -0.1276 });
 
-function Home() {
-  const{isLoaded}= useLoadScript({
-    googleMapsApiKey: "AIzaSyAPAOwoCOwvLzHDrtDUToJUb3Fx8xUV_jg", 
-  });
+  return (
+    <>
+      <div className="places-container">
+        <PlacesAutocomplete setCenter={setCenter} />
+      </div>
 
-  if(!isLoaded) return <div>Loading...</div>;
-  return <Map />
+      <GoogleMap
+        zoom={14}
+        center={center}
+        mapContainerClassName="map-container"
+      >
+        {center && <Marker position={center} />}
+      </GoogleMap>
+    </>
+  );
 }
 
-
-export default Home;
+export default Map;

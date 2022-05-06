@@ -1,15 +1,14 @@
-import './App.css';
 import { useLoadScript } from "@react-google-maps/api";
-// import Map from './api/googlemap';
-import Places from './api/places';
+import Places from './api/Places';
+import './App.css';
 
-
-export default function Home() {
+function Home() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAPAOwoCOwvLzHDrtDUToJUb3Fx8xUV_jg",
   });
 
   if (!isLoaded) return <div>Loading...</div>;
   return <Places/ >;
-
 }
+
+export default Home;
