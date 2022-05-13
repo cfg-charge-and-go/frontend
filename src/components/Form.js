@@ -1,9 +1,10 @@
 import React from 'react';
-
+import './Form.css';
 const Form = () => {
   return (
     <>
       <form>
+        <p>Hi new friend!<br/>Welcome to Charge &amp; Go</p>
         <div className="form-group">
           <input type="FirstName" className="form-control" id="exampleInputFirstName" placeholder="First name" />
         </div>
