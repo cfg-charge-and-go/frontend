@@ -1,7 +1,9 @@
 import MapContainer from '../api/MapContainer';
-import Footer from '../components/Footer';
 import Hero from "../components/Hero";
-import Popup from '../components/Popup';
+import Footer from '../components/Footer';
+import LoginModal from '../components/LoginModal';
+import InfoModal from '../components/InfoModal';
+import SignupModal from '../components/SignupModal';
 
 function Home() {
   return (
@@ -9,7 +11,9 @@ function Home() {
       <Hero loggedIn={false} />
       <MapContainer />
       <Footer loggedIn={false} />
-      <Popup />
+      <LoginModal />
+      <InfoModal />
+      <SignupModal />
     </div>
   ); 
 }
