@@ -1,6 +1,7 @@
 import MapContainer from '../api/MapContainer';
 import Footer from '../components/Footer';
 import Hero from "../components/Hero";
+import Popup from '../components/Popup';
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Hero loggedIn={false} />
       <MapContainer />
       <Footer loggedIn={false} />
+      <Popup />
     </div>
   ); 
 }

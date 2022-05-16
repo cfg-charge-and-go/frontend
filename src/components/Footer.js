@@ -14,7 +14,7 @@ const Footer = ({loggedIn}) => {
           <Link to="/login"><span className="fs-4"><LoginIcon /></span><br />Login</Link>
         </div>
         <div className="col">
-          <Link to="/info"><span className="fs-4"><InfoIcon /></span><br />Information</Link>
+          <Link to="/info" data-bs-toggle="modal" data-bs-target="#infoModal"><span className="fs-4"><InfoIcon /></span><br />Information</Link>
         </div>
         <div className="col">
           <Link to="/signup"><span className="fs-4"><SignupIcon /></span><br />Sign up</Link>
