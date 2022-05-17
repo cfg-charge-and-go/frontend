@@ -1,6 +1,6 @@
 import { useLoadScript } from "@react-google-maps/api";
 import Map from "./Map";
-import './MapContainer.css'
+import "./MapContainer.css";
 
 function Places() {
   const { isLoaded } = useLoadScript({
