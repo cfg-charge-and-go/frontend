@@ -50,10 +50,11 @@ export default function Amenities() {
           type="checkbox" 
           id="fav" 
           hidden class="cb-btn"
+          value="Add to Favourites"
         />&nbsp;
-        <label class="btn btn-dark" for="fav">
+        <label class="btn btn-dark fav" for="fav">
           Add to Favourites?
-        </label>
+        </label> 
       </div> 
     </div>
   )

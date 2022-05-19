@@ -2,7 +2,7 @@ import Menu from "./Menu";
 import logo from '../assets/logo.png';
 import './Hero.css';
 
-function Hero({loggedIn}) {
+export default function Hero({loggedIn}) {
   return (
     <div className="pt-5 pb-4">
       {loggedIn && <Menu />}
@@ -12,5 +12,3 @@ function Hero({loggedIn}) {
     </div>
   );
 }
-
-export default Hero;

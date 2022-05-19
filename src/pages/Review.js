@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
 import StarRating from '../components/StarRating';
 import Amenities from '../components/Amenities';
-import SubmitButton from '../components/SubmitButton';
+import Button2 from '../components/Button2';
 
 export default function Review() {
   return (
@@ -11,7 +11,8 @@ export default function Review() {
       <StarRating />
       <h5 className="review-subtitle">Did you visit any of these places nearby?</h5>
       <Amenities />
-      <SubmitButton />
+      <Button2 title="Submit" />
     </div>
   ); 
 }
+ 
