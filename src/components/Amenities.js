@@ -15,7 +15,7 @@ export default function Amenities() {
           id="tree" 
           hidden className="cb-btn"
         />
-        <label className="btn btn-dark" for="tree">
+        <label className="btn btn-dark" htmlFor="tree">
           <ParkIcon className="fs-4" /><br></br>Parks
         </label>
         <input 
@@ -23,7 +23,7 @@ export default function Amenities() {
           id="bag" 
           hidden className="cb-btn"
         />
-        <label className="btn btn-dark" for="bag">
+        <label className="btn btn-dark" htmlFor="bag">
           <ShopIcon className="fs-4" /><br></br>Shops
         </label>
       </div>
@@ -33,7 +33,7 @@ export default function Amenities() {
           id="landmark" 
           hidden className="cb-btn"
         />
-        <label className="btn btn-dark" for="landmark">
+        <label className="btn btn-dark" htmlFor="landmark">
           <LandmarkIcon className="fs-4" /><br></br>Landmarks
         </label>
         <input 
@@ -41,7 +41,7 @@ export default function Amenities() {
           id="food" 
           hidden className="cb-btn"
         />
-        <label className="btn btn-dark" for="food">
+        <label className="btn btn-dark" htmlFor="food">
           <FoodIcon className="fs-4"/><br></br>Food
         </label>
       </div>
@@ -52,7 +52,7 @@ export default function Amenities() {
           hidden className="cb-btn"
           value="Add to Favourites"
         />&nbsp;
-        <label className="btn btn-dark fav" for="fav">
+        <label className="btn btn-dark fav" htmlFor="fav">
           Add to Favourites?
         </label> 
       </div> 
