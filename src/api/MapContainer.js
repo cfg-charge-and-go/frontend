@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { useLoadScript } from "@react-google-maps/api";
 import Map from "./Map";
 import "./MapContainer.css";

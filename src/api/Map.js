@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { GoogleMap, Marker } from "@react-google-maps/api";
@@ -6,11 +5,10 @@ import { Compass } from "react-bootstrap-icons";
 import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
 
-function SearchBar(props) {
-  console.log(props.setCenter);
+function SearchBar({ setCenter }) {
   return (
     <div className="container d-flex flex-column align-items-center mx-auto">
-      <PlacesAutocomplete setCenter={props.setCenter} isEnd={false} />
+      <PlacesAutocomplete setCenter={setCenter} isEnd={false} />
       <p className="d-flex align-items-center pt-1">
         Or&nbsp;
         <a className="text-decoration-underline" href="#">
@@ -25,14 +23,10 @@ function SearchBar(props) {
   );
 }
 
-function SearchBarWithEndPoint(props) {
-  // eslint-disable-next-line react/prop-types
-  console.log(props.setCenter);
+function SearchBarWithEndPoint({ setCenter }) {
   return (
-    // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div className="container d-flex flex-column align-items-center mx-auto">
-      // eslint-disable-next-line react/prop-types
-      <PlacesAutocomplete setCenter={props.setCenter} isEnd={true} />
+      <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
     </div>
   );
 }
@@ -61,7 +55,6 @@ function Map() {
         >
           {mapLoaded &&
             chargingStations.map((chargingStation) => (
-              // eslint-disable-next-line react/jsx-key
               <Marker position={chargingStation} />
             ))}
         </GoogleMap>

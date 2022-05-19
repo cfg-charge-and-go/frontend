@@ -14,5 +14,7 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "warning",
+    "react/jsx-key": "warning",
   },
 };

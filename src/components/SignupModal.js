@@ -4,7 +4,6 @@ import Button2 from '../components/Button2';
 const SignupModal = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(event)
 }
 
   return (
