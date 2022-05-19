@@ -1,9 +1,15 @@
-import React from 'react';
-import Button2 from '../components/Button2';
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Button2 from "../components/Button2";
 
 const SignupModal = () => {
+  const navigate = useNavigate()
+  const dismissButton = useRef()
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    dismissButton.current?.click()
+    navigate("/memberhomepage")
   }
 
   return (
@@ -11,7 +17,7 @@ const SignupModal = () => {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-body">
-            <button type="button" className="btn-close d-block ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" className="btn-close d-block ms-auto" data-bs-dismiss="modal" aria-label="Close" ref={dismissButton}></button>
             <h5 className="modal-title mb-3" id="signupModalLabel">Welcome to Charge<span className="text-muted">&amp;</span>Go!</h5>
             <form onSubmit={handleSubmit}>
               <div className="form-group mb-3">
@@ -33,7 +39,6 @@ const SignupModal = () => {
               <div className="form-group mb-3">
                 <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
               </div>
-              {/* <button type="submit" className="btn btn-dark rounded-pill">Register</button> */}
               <Button2 title="Register" />
             </form>
           </div>
