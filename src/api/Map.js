@@ -20,7 +20,7 @@ function Map() {
     <>
       <div className="container d-flex flex-column align-items-center mx-auto">
         <PlacesAutocomplete setCenter={setCenter} />
-        <p className="d-flex align-items-center pt-1">Or&nbsp;<a className="text-decoration-underline" href="#">use current location</a>&nbsp;<span className="fs-5 mb-1"><Compass /></span></p>
+        <p className="d-flex align-items-center pt-1">Or&nbsp;<a className="text-decoration-underline" href=" ">use current location</a>&nbsp;<span className="fs-5 mb-1"><Compass /></span></p>
       </div>
 
       <div className="Map max-width-md mx-auto my-4">

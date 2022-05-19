@@ -5,7 +5,7 @@ import LoginModal from '../components/LoginModal';
 import InfoModal from '../components/InfoModal';
 import SignupModal from '../components/SignupModal';
 
-function Home() {
+export default function Home() {
   return (
     <div className="text-center pt-5">
       <Hero loggedIn={false} />
@@ -17,5 +17,3 @@ function Home() {
     </div>
   ); 
 }
-
-export default Home;
