@@ -1,0 +1,28 @@
+.menuShow{
+    display: block;
+}
+.menuHide{
+    display: none;
+}
+nav{
+    position: absolute;
+    top: 48px;
+    right: 10px;
+} 
+
+nav ul{
+    background-color: #EEEEEE;
+    width: 250px;
+    border-radius: 15px;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 10px 5px;
+    color: black;
+    text-align: left;
+    font-size: 14px;
+}
+.icon{
+    margin-right: 10px;
+}

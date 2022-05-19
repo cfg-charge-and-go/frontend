@@ -1,9 +1,11 @@
 import React from 'react';
+import Button2 from '../components/Button2';
 
 const SignupModal = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-  }
+    // console.log(event)
+}
 
   return (
     <div className="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
@@ -32,7 +34,8 @@ const SignupModal = () => {
               <div className="form-group mb-3">
                 <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
               </div>
-              <button type="submit" className="btn btn-dark rounded-pill">Register</button>
+              {/* <button type="submit" className="btn btn-dark rounded-pill">Register</button> */}
+              <Button2 title="Register" />
             </form>
           </div>
         </div>

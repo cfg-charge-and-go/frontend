@@ -1,4 +1,5 @@
 import React from 'react';
+import Button2 from '../components/Button2';
 
 const LoginModal = () => {
   const handleSubmit = (event) => {
@@ -19,7 +20,7 @@ const LoginModal = () => {
               <div className="form-group mb-3">
                 <input type="password" name="Password" className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" />
               </div>
-              <button type="submit" className="btn btn-dark rounded-pill">Log In</button>
+              <Button2 title="Login" />
             </form>
           </div>
         </div>
