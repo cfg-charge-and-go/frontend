@@ -1,11 +1,7 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import {
-  GoogleMap,
-  Marker,
-  DirectionsService,
-  DirectionsRenderer,
-} from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 import { Compass } from "react-bootstrap-icons";
 import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
@@ -30,9 +26,12 @@ function SearchBar(props) {
 }
 
 function SearchBarWithEndPoint(props) {
+  // eslint-disable-next-line react/prop-types
   console.log(props.setCenter);
   return (
+    // eslint-disable-next-line react/jsx-no-comment-textnodes
     <div className="container d-flex flex-column align-items-center mx-auto">
+      // eslint-disable-next-line react/prop-types
       <PlacesAutocomplete setCenter={props.setCenter} isEnd={true} />
     </div>
   );
@@ -42,8 +41,6 @@ function Map() {
   const [center, setCenter] = useState({ lat: 51.5072, lng: -0.1276 });
   const [chargingStations, setChargingStations] = useState([]);
   const [mapLoaded, setMapLoaded] = useState(false);
-  const [destination, setDestination] = useState(null);
-  const [directions, setDirections] = useState(null);
 
   useEffect(function () {
     setMapLoaded(true);
@@ -64,22 +61,9 @@ function Map() {
         >
           {mapLoaded &&
             chargingStations.map((chargingStation) => (
-              <Marker
-                position={chargingStation}
-                onClick={() => setDestination(chargingStation)}
-              />
+              // eslint-disable-next-line react/jsx-key
+              <Marker position={chargingStation} />
             ))}
-          <DirectionsService
-            options={{
-              origin: center,
-              destination: destination,
-              travelMode: "DRIVING",
-            }}
-            callback={setDirections}
-          />
-          {directions && (
-            <DirectionsRenderer options={{ directions: directions }} />
-          )}
         </GoogleMap>
       </div>
       {location.pathname === "/memberhomepage" && (

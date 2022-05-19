@@ -2,6 +2,7 @@ import Menu from "./Menu";
 import logo from "../assets/logo.png";
 import "./Hero.css";
 
+// eslint-disable-next-line react/prop-types
 function Hero({ loggedIn }) {
   return (
     <div className="pt-2.5 pb-4">

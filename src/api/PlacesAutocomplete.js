@@ -11,7 +11,9 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import "./PlacesAutocomplete.css";
+import React from "react";
 
+// eslint-disable-next-line react/prop-types
 const PlacesAutocomplete = ({ setCenter, isEnd }) => {
   const {
     ready,
