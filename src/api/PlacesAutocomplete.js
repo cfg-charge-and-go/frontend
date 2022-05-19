@@ -1,10 +1,27 @@
-import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
-import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxPopover,
+  ComboboxList,
+  ComboboxOption,
+} from "@reach/combobox";
 import "@reach/combobox/styles.css";
-import './PlacesAutocomplete.css';
+import "./PlacesAutocomplete.css";
+import React from "react";
 
-const PlacesAutocomplete = ({ setCenter }) => {
-  const { ready, value, setValue, suggestions: { status, data }, clearSuggestions } = usePlacesAutocomplete();
+// eslint-disable-next-line react/prop-types
+const PlacesAutocomplete = ({ setCenter, isEnd }) => {
+  const {
+    ready,
+    value,
+    setValue,
+    suggestions: { status, data },
+    clearSuggestions,
+  } = usePlacesAutocomplete();
 
   const handleSelect = async (address) => {
     setValue(address, false);
@@ -17,14 +34,33 @@ const PlacesAutocomplete = ({ setCenter }) => {
 
   return (
     <Combobox onSelect={handleSelect}>
-      <ComboboxInput value={value} onChange={(e) => setValue(e.target.value)} disabled={!ready} className="combobox-input" placeholder="Enter your starting point" />
-        {status === "OK" && data.length > 0 &&
-          <ComboboxPopover>
-            <ComboboxList>
-              {data.map(({ place_id, description }) => <ComboboxOption key={place_id} value={description} />)}
-            </ComboboxList>
-          </ComboboxPopover>
-        }
+      {isEnd ? (
+        <ComboboxInput
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          disabled={!ready}
+          className="combobox-input"
+          placeholder="Add a destination"
+        />
+      ) : (
+        <ComboboxInput
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          disabled={!ready}
+          className="combobox-input"
+          placeholder="Enter your start point"
+        />
+      )}
+
+      {status === "OK" && data.length > 0 && (
+        <ComboboxPopover>
+          <ComboboxList>
+            {data.map(({ place_id, description }) => (
+              <ComboboxOption key={place_id} value={description} />
+            ))}
+          </ComboboxList>
+        </ComboboxPopover>
+      )}
     </Combobox>
   );
 };

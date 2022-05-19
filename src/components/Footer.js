@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import {
   ArrowLeftSquare as BackIcon,
@@ -7,7 +8,7 @@ import {
   PencilSquare as SignupIcon,
 } from "react-bootstrap-icons";
 
-const Footer = ({loggedIn}) => {
+const Footer = ({ loggedIn }) => {
   return (
     <div className="container">
       <div className="row max-width-md mx-auto">
@@ -29,6 +30,6 @@ const Footer = ({loggedIn}) => {
       </div>
     </div>
   );
-}
+};
 
 export default Footer;
