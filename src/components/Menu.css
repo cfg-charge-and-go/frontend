@@ -1,15 +1,46 @@
-.MenuIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.menu-container {
   position: fixed;
   top: 2rem;
   right: 2rem;
+  z-index: 10;
+  text-align: right;
+}
+
+.menu-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 3rem;
   height: 3rem;
+  margin-left: auto;
+  margin-bottom: 10px;
   border-radius: 50%;
   box-shadow: 1px 1px 3px #CCC;
   background-color: #BBB;
   font-size: 1.75rem;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.menu {
+  transition: opacity 0.5s;
+}
+
+
+.menu-show {
+
+}
+
+.menu-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+nav ul{
+  background-color: #EEEEEE;
+  border-radius: 15px;
+}
+
+.icon{
+  margin-left: 10px;
 }

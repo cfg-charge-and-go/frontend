@@ -13,7 +13,7 @@ function MemberHomepage() {
   return (
     <div className="text-center pt-5">
       <Hero loggedIn={true} />
-      <MapContainer />
+      <MapContainer searchBarPosition={"bottom"}/>
       <div className="d-grid col-6 mx-auto">
         <button
           type="start"

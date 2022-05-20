@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { GoogleMap, Marker } from "@react-google-maps/api";
+import { GoogleMap, Marker} from "@react-google-maps/api";
 import { Compass } from "react-bootstrap-icons";
 import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
+import Pin from '../assets/pin.svg'
 
 function SearchBar({ setCenter }) {
   return (
@@ -23,52 +23,45 @@ function SearchBar({ setCenter }) {
   );
 }
 
-function SearchBarWithEndPoint({ setCenter }) {
-  return (
-    <div className="container d-flex flex-column align-items-center mx-auto">
-      <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
-    </div>
-  );
-}
+// function SearchBarWithEndPoint({ setCenter }) {
+//   return (
+//     <div className="container d-flex flex-column align-items-center mx-auto">
+//       <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
+//     </div>
+//   );
+// }
 
-function Map() {
-  const [center, setCenter] = useState({ lat: 51.5072, lng: -0.1276 });
+function Map({searchBarPosition}) {
+  const [center, setCenter] = useState({ lat: 51.5054, lng: 0.0235 });
   const [chargingStations, setChargingStations] = useState([]);
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(function () {
     setMapLoaded(true);
-    getChargingStations().then(setChargingStations);
-  }, []);
-
-  const location = useLocation();
-  console.log(location.pathname);
+    getChargingStations(center).then(setChargingStations);
+  }, [center]);
 
   return (
     <>
-      {location.pathname === "/" && <SearchBar setCenter={setCenter} />}
+      {searchBarPosition === "top" && <SearchBar setCenter={setCenter} />}
       <div className="Map max-width-md mx-auto mb-5">
         <GoogleMap
-          zoom={12}
+          zoom={13}
           center={center}
           mapContainerClassName="map-container"
         >
           {mapLoaded &&
             chargingStations.map((chargingStation) => (
-              <Marker position={chargingStation} />
+              <Marker position={chargingStation} icon={Pin}/>
             ))}
         </GoogleMap>
       </div>
-      {location.pathname === "/memberhomepage" && (
+      {searchBarPosition === "bottom" && (
         <SearchBar setCenter={setCenter} />
       )}
-
-      {location.pathname === "/startpoint" && (
-        <SearchBar setCenter={setCenter} />
-      )}
-      {location.pathname === "/startpoint" && (
+      {/* {location.pathname === "/startpoint" && (
         <SearchBarWithEndPoint setCenter={setCenter} />
-      )}
+      )} */}
     </>
   );
 }

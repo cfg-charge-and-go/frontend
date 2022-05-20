@@ -1,7 +1,6 @@
-export async function getChargingStations() {
-    return [
-      { lat: 51.49399, lng: -0.01045 },
-      { lat: 51.5002, lng: -0.0103 },
-      { lat: 51.54, lng: -0.01042 },
-    ];
-  }
+export async function getChargingStations(center) {
+  const response = await fetch(`http://127.0.0.1:5000/test/${center.lat}/${center.lng}`)
+  const data = await response.json()
+  const stations = data.map(device => ({lat: parseFloat(device.ChargeDeviceLocation.Latitude), lng: parseFloat(device.ChargeDeviceLocation.Longitude)}))
+  return stations
+}
