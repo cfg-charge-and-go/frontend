@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button2 from '../components/Button2';
+import Button from '../components/buttons/Button';
 
 const LoginModal = () => {
   const navigate = useNavigate()
@@ -26,7 +26,7 @@ const LoginModal = () => {
               <div className="form-group mb-3">
                 <input type="password" name="Password" className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" />
               </div>
-              <Button2 title="Login" />
+              <Button title="Login" />
             </form>
           </div>
         </div>

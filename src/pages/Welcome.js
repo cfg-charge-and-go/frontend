@@ -1,18 +1,14 @@
-
-import WelcomeImage from '../components/WelcomeImage';
-import WelcomeButton from '../components/Button';
-import welcomelogo from '../assets/welcomelogo.png';
+import WelcomeHero from "../components/WelcomeHero";
+import WelcomeButton from "../components/buttons/WelcomeButton";
+import ResponsivePlayer from "../components/WelcomeVideo";
 
 export default function Welcome() {
   return (
-    
     <div className="welcome-body text-center pt-5">
-      <>
-        <img src={ welcomelogo } alt="white logo: charge and go" className="welcomelogo"/>
-        <WelcomeImage />
-        <h2 className="welcometext">Find a charger nearby</h2>
-        <WelcomeButton />
-      </>
+      <WelcomeHero />
+      <ResponsivePlayer />
+      <h3 className="welcometext pt-5" >Find a charging station near you</h3>
+      <WelcomeButton />
     </div>
   ); 
 }

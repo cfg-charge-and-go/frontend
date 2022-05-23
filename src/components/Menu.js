@@ -27,7 +27,7 @@ export default function Menu() {
             <Link to='/favourites' className="nav-link link-dark">Favourites<FavouritesIcon className='icon'/></Link>
           </li>
           <li className="nav-item">
-            <Link to='/logout' className="nav-link link-dark">Logout<LogoutIcon className='icon'/></Link>
+            <Link to='/home' className="nav-link link-dark">Logout<LogoutIcon className='icon'/></Link>
           </li>
         </ul>
       </nav>

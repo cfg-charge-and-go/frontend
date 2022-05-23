@@ -4,3 +4,10 @@
   width: 300px;
   max-width: 90%;
 }
+
+.welcomelogo {
+  display: block;
+  margin: auto;
+  width: 300px;
+  max-width: 90%; 
+}

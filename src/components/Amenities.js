@@ -53,7 +53,7 @@ export default function Amenities() {
           value="Add to Favourites"
         />&nbsp;
         <label className="btn btn-dark fav" htmlFor="fav">
-          Add to Favourites?
+          Add to Favs?
         </label> 
       </div> 
     </div>

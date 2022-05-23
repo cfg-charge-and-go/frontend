@@ -1,0 +1,37 @@
+.welcome-body {
+  /* background-color: rgb(25,28,40); */
+  /* background-color: #162E6F;  */
+}
+
+#root {
+  /* background-color: rgb(25,28,40); */
+  /* background-color: #162E6F; */
+  /* background-color: #011F4B; */
+}
+
+.welcome-btn {
+  background-color: #94F7F4 !important;
+  width: 200px;
+  border-radius: 30px !important;
+  padding-left: 8px;
+  font-size: 18px !important;
+  height: 45px;
+  border-color: #94F7F4 !important;
+  box-shadow: 2px 2px 1px rgb(4, 6, 9);
+  color: rgb(14, 13, 13) !important;
+} 
+
+.welcome-btn:hover {
+  color: #fff !important;
+  background: rgb(25,28,40) !important;
+  border-color: #fff !important;
+  border-width: thin;
+  transition: 0.3s !important;
+}
+
+.welcometext {
+  color: #fff;
+  font-weight: 300 !important;
+  text-shadow: 1px 1px 2px rgb(4, 6, 9);
+  padding-bottom: 30px;
+}

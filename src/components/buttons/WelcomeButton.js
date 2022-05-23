@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import './Button.css';
+import './WelcomeButton.css';
 import { ArrowRightShort as NextIcon } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 

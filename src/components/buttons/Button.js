@@ -1,4 +1,4 @@
-import "./Button2.css";
+import "./Button.css";
 
 const Button2 = ({title}) => {
     return(

@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Home from './pages/Home';
-import Review from './pages/Review';
+import Rating from './pages/Rating';
+import Profile from './pages/Profile'
+import Settings from './pages/Settings';
 import Favourites from './pages/Favourites';
 import MemberHomepage from './pages/MemberHomepage';
 import StartPointWithChargeStations from './pages/StartPointWithChargeStations';
@@ -20,7 +22,9 @@ root.render(
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/review" element={<Review />} />
+        <Route path="/rating" element={<Rating />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path='/settings' element={<Settings />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/memberhomepage" element={<MemberHomepage />} />
         <Route path="/startpoint" element={<StartPointWithChargeStations />} />

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import Button2 from "../components/Button2";
+import Button from "../components/buttons/Button";
 
 const SignupModal = () => {
   const navigate = useNavigate()
@@ -39,7 +39,7 @@ const SignupModal = () => {
               <div className="form-group mb-3">
                 <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
               </div>
-              <Button2 title="Register" />
+              <Button title="Register" />
             </form>
           </div>
         </div>
