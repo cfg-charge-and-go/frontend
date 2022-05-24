@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-<<<<<<< Updated upstream
-import Button from "../components/buttons/Button";
-=======
 import SignupUserForm from './SignupUserForm';
->>>>>>> Stashed changes
 
 const SignupModal = () => {
   const navigate = useNavigate()
@@ -23,37 +19,11 @@ const SignupModal = () => {
           <div className="modal-body">
             <button type="button" className="btn-close d-block ms-auto" data-bs-dismiss="modal" aria-label="Close" ref={dismissButton}></button>
             <h5 className="modal-title mb-3" id="signupModalLabel">Welcome to Charge<span className="text-muted">&amp;</span>Go!</h5>
-<<<<<<< Updated upstream
-            <form onSubmit={handleSubmit}>
-              <div className="form-group mb-3">
-                <input type="text" name="FirstName" className="form-control rounded-pill" id="FirstName" placeholder="First name" />
-              </div>
-              <div className="form-group mb-3">
-                <input type="text" name="LastName" className="form-control rounded-pill" id="LastName" placeholder="Last name" />
-              </div>
-              <div className="form-group mb-3">
-                <input type="date" name="Birthday" className="form-control rounded-pill" id="Birthday" placeholder="Birthday DD/MM/YY" />
-              </div>
-              <div className="form-group mb-3">
-                <input type="email" name="Email" className="form-control rounded-pill" id="Email" placeholder="Email" />
-              </div>
-              <div className="form-group mb-3">
-                <input type="password" name="Password" className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" />
-                <small id="passwordHelp" className="form-text text-muted">6-character minimum; case sensitive.</small>
-              </div>
-              <div className="form-group mb-3">
-                <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
-              </div>
-              <Button title="Register" />
-            </form>
-          </div>
-=======
             <div onSubmit={handleSubmit}>
                     <SignupUserForm />
             </div>
             </div>
         </div>
->>>>>>> Stashed changes
         </div>
     </div>
     )

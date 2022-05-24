@@ -1,24 +1,32 @@
 import React, { useState } from "react";
-import Button2 from "./Button2";
+import Button from '../components/buttons/Button';
 
 
 const LoginUser = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     e.preventDefault();
+    console.log(e)
     const loginIn = {email, password };
-
-    fetch('http://127.0.0.1:5000/login', {
+    try {
+      let response = await fetch("http://127.0.0.1:5000/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginIn)
-      }).then(() => {
-        console.log("User Logged in!")
-      })
-  }
-
+      });
+      if (response.status === 200) {
+        setEmail("");
+        setPassword("")
+        setMessage("User logged in successfully!");
+      } else {
+        setMessage("Error. Could not log user in");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   
   return (
@@ -32,7 +40,8 @@ const LoginUser = () => {
                 <input type="password" name="password" required value={password} className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                 <small id="passwordHelp" className="form-text text-muted">6-character minimum; case sensitive.</small>
               </div>
-              <Button2 title="Login" />
+              <Button title="Login" />
+              <div className="message">{message ? <p>{message}</p> : null}</div>
             </form>
           </div>
         </div>

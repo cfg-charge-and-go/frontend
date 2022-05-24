@@ -1,16 +1,5 @@
 import React, { useState } from "react";
-import Button2 from "./Button2";
-
-
-//     fetch('http://127.0.0.1:5000/signup', {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(signingup)
-//     }).then(() => {
-//         // console.log("New User Created!")
-//       })
-//     }
-// };
+import Button from '../components/buttons/Button';
 
 
 const SignupUser = () => {
@@ -24,8 +13,13 @@ const SignupUser = () => {
     e.preventDefault();
     const signingup = {first_name, last_name, date_of_birth, email, password };
 
-    
-    console.log(signingup);
+    fetch('http://127.0.0.1:5000/signup', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(signingup)
+    }).then(() => {
+        console.log("New User Created!")
+      })
   }
 
 
@@ -53,7 +47,7 @@ const SignupUser = () => {
               <div className="form-group mb-3">
                 <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
               </div>
-              <Button2 title="Register" />
+              <Button title="Register" />
             </form>
           </div>
         </div>
