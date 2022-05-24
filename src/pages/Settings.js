@@ -10,7 +10,7 @@ import {
 
 export default function Settings() {
     return (
-      <div className="container pl-3 pt-5">
+      <div className="container pl-3 py-5">
         <Hero loggedIn={true} />
         <h2>Settings</h2>
         <h5>Account</h5>

@@ -5,7 +5,7 @@ import "./Welcome.css";
 
 export default function Welcome() {
   return (
-    <div className="welcome-body h-100 text-center pt-5">
+    <div className="welcome-body text-center py-5">
       <WelcomeHero />
       <ResponsivePlayer />
       <h3 className="welcometext pt-5" >Find a charging station near you</h3>
