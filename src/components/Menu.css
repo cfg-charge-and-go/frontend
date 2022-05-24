@@ -26,11 +26,6 @@
   transition: opacity 0.5s;
 }
 
-
-.menu-show {
-
-}
-
 .menu-hide {
   opacity: 0;
   pointer-events: none;
@@ -44,6 +39,11 @@ nav ul {
 
 nav li {
   text-align: left;
+}
+
+.nav-item a:hover {
+  background-color: #EEE;
+  color: #000;  
 }
 
 .icon{
