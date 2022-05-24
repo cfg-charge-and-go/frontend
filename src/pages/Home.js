@@ -7,7 +7,7 @@ import SignupModal from '../components/SignupModal';
 
 export default function Home() {
   return (
-    <div className="text-center pt-5">
+    <div className="text-center py-5">
       <Hero loggedIn={false} />
       <MapContainer searchBarPosition={"top"} />
       <Footer loggedIn={false} />

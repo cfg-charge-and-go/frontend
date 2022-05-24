@@ -5,10 +5,10 @@ import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
 import Pin from '../assets/pin.svg'
 
-function SearchBar({ setCenter }) {
+function SearchBar({ setPosition }) {
   return (
     <div className="container d-flex flex-column align-items-center mx-auto">
-      <PlacesAutocomplete setCenter={setCenter} isEnd={false} />
+      <PlacesAutocomplete setPosition={setPosition} isEnd={false} />
       <p className="d-flex align-items-center pt-1">
         Or&nbsp;
         <a className="text-decoration-underline" href="#">
@@ -23,33 +23,42 @@ function SearchBar({ setCenter }) {
   );
 }
 
-function SearchBarWithEndPoint({ setCenter }) {
+function SearchBarWithEndPoint({ setPosition }) {
   return (
     <div className="container d-flex flex-column align-items-center mx-auto mb-3">
-      <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
+      <PlacesAutocomplete setPosition={setPosition} isEnd={true} />
     </div>
   );
 }
 
 function Map({searchBarPosition}) {
   const [center, setCenter] = useState({ lat: 51.5054, lng: 0.0235 });
+  const [zoom, setZoom] = useState(13);
+  const [startPoint, setStartPoint] = useState({ lat: 51.49, lng: -0.01 });
+  const [endPoint, setEndPoint] = useState({ lat: 51.52, lng: 0.05 });
   const [chargingStations, setChargingStations] = useState([]);
   const [selectedStation, setSelectedStation] = useState();
   const [mapLoaded, setMapLoaded] = useState(false);
 
-  useEffect(function () {
+  useEffect(function() {
     setMapLoaded(true); 
     // have local storage get the items set from local storage; call get item, pass in the string to retrieve object
     // setCenter
     getChargingStations(center).then(setChargingStations);
   }, [center]);
 
+  useEffect(function() {
+    setCenter({ lat: (startPoint.lat + endPoint.lat) / 2, lng: (startPoint.lng + endPoint.lng) / 2});
+    const scale = Math.max(Math.abs(startPoint.lat - endPoint.lat), Math.abs(startPoint.lng - endPoint.lng));
+    setZoom(Math.floor(Math.exp(-scale + 9/4) + 5));
+  }, [startPoint, endPoint]);
+
   return (
     <>
-      {searchBarPosition === "top" && <SearchBar setCenter={setCenter} />}
+      {searchBarPosition === "top" && <SearchBar setPosition={setCenter} />}
       <div className="Map max-width-md mx-auto mb-5">
         <GoogleMap
-          zoom={13}
+          zoom={zoom}
           center={center}
           mapContainerClassName="map-container"
         >
@@ -58,15 +67,15 @@ function Map({searchBarPosition}) {
               {chargingStations.map((chargingStation) => (
                 <Marker position={chargingStation} icon={Pin} onClick={() => setSelectedStation(chargingStation)}/>
               ))}
-              {selectedStation && <InfoWindow position={{lat: selectedStation.lat + 0.0015, lng: selectedStation.lng}} onCloseClick={(event) => event.preventDefault()}>
+              {selectedStation && <InfoWindow position={{lat: selectedStation.lat + 0.0015, lng: selectedStation.lng}}>
                 <div>{selectedStation.name}</div>
               </InfoWindow>}
             </>}
         </GoogleMap>
       </div>
       {searchBarPosition === "bottom" && <>
-        <SearchBar setCenter={setCenter} />
-        <SearchBarWithEndPoint setCenter={setCenter} />
+        <SearchBar setPosition={setStartPoint} />
+        <SearchBarWithEndPoint setPosition={setEndPoint} />
       </>}
     </>
   );

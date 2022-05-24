@@ -13,7 +13,7 @@ export default function Rating() {
   };
 
   return (
-    <div className="text-center pt-5">
+    <div className="text-center py-5">
       <Hero loggedIn={true} />
       <h2 className="review-title pt-5">Rate your trip @ location name</h2>
       <div>

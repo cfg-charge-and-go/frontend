@@ -4,7 +4,7 @@ import Button from "../components/buttons/Button";
 
 export default function Profile() {
   return (
-    <div className="container pt-5">
+    <div className="container py-5">
       <Hero loggedIn={true} />
       <div className="text-center mt-5 mb-3">
         <img src={ProfileImage} style={{width: "80px"}}/>

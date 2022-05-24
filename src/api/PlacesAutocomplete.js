@@ -13,7 +13,7 @@ import "@reach/combobox/styles.css";
 import "./PlacesAutocomplete.css";
 import React from "react";
 
-const PlacesAutocomplete = ({ setCenter, isEnd }) => {
+const PlacesAutocomplete = ({ setPosition, isEnd }) => {
   const {
     ready,
     value,
@@ -29,7 +29,7 @@ const PlacesAutocomplete = ({ setCenter, isEnd }) => {
     const results = await getGeocode({ address });
     const { lat, lng } = await getLatLng(results[0]);
     //set local storage
-    setCenter({ lat, lng });
+    setPosition({ lat, lng });
   };
 
   return (

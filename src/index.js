@@ -8,7 +8,6 @@ import Profile from './pages/Profile'
 import Settings from './pages/Settings';
 import Favourites from './pages/Favourites';
 import MemberHomepage from './pages/MemberHomepage';
-import StartPointWithChargeStations from './pages/StartPointWithChargeStations';
 import RouteSuggestion from './pages/RouteSuggestion';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -27,7 +26,6 @@ root.render(
         <Route path='/settings' element={<Settings />} />
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/memberhomepage" element={<MemberHomepage />} />
-        <Route path="/startpoint" element={<StartPointWithChargeStations />} />
         <Route path="/routesuggestion" element={<RouteSuggestion />} />
       </Routes>
     </BrowserRouter>

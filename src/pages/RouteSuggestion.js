@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 function RouteSuggestion() {
   return (
-    <div className="text-center pt-5">
+    <div className="text-center py-5">
       <Hero loggedIn={true} />
       <MapContainer searchBarPosition={"bottom"}/>
       <Footer loggedIn={true} />
