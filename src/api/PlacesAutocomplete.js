@@ -34,24 +34,13 @@ const PlacesAutocomplete = ({ setCenter, isEnd }) => {
 
   return (
     <Combobox onSelect={handleSelect}>
-      {isEnd ? (
-        <ComboboxInput
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          disabled={!ready}
-          className="combobox-input"
-          placeholder="Add a destination"
-        />
-      ) : (
-        <ComboboxInput
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          disabled={!ready}
-          className="combobox-input"
-          placeholder="Enter your start point"
-        />
-      )}
-
+      <ComboboxInput
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        disabled={!ready}
+        className="combobox-input"
+        placeholder={isEnd ? "Enter your destination" : "Enter your start point"}
+      />
       {status === "OK" && data.length > 0 && (
         <ComboboxPopover>
           <ComboboxList>
