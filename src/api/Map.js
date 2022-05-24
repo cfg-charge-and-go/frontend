@@ -37,7 +37,9 @@ function Map({searchBarPosition}) {
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(function () {
-    setMapLoaded(true);
+    setMapLoaded(true); 
+    // have local storage get the items set from local storage; call get item, pass in the string to retrieve object
+    // setCenter
     getChargingStations(center).then(setChargingStations);
   }, [center]);
 

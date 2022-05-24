@@ -28,6 +28,7 @@ const PlacesAutocomplete = ({ setCenter, isEnd }) => {
 
     const results = await getGeocode({ address });
     const { lat, lng } = await getLatLng(results[0]);
+    //set local storage
     setCenter({ lat, lng });
   };
 
