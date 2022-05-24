@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GoogleMap, Marker} from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { Compass } from "react-bootstrap-icons";
 import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
@@ -23,21 +23,24 @@ function SearchBar({ setCenter }) {
   );
 }
 
-// function SearchBarWithEndPoint({ setCenter }) {
-//   return (
-//     <div className="container d-flex flex-column align-items-center mx-auto">
-//       <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
-//     </div>
-//   );
-// }
+function SearchBarWithEndPoint({ setCenter }) {
+  return (
+    <div className="container d-flex flex-column align-items-center mx-auto mb-3">
+      <PlacesAutocomplete setCenter={setCenter} isEnd={true} />
+    </div>
+  );
+}
 
 function Map({searchBarPosition}) {
   const [center, setCenter] = useState({ lat: 51.5054, lng: 0.0235 });
   const [chargingStations, setChargingStations] = useState([]);
+  const [selectedStation, setSelectedStation] = useState();
   const [mapLoaded, setMapLoaded] = useState(false);
 
   useEffect(function () {
-    setMapLoaded(true);
+    setMapLoaded(true); 
+    // have local storage get the items set from local storage; call get item, pass in the string to retrieve object
+    // setCenter
     getChargingStations(center).then(setChargingStations);
   }, [center]);
 
@@ -51,17 +54,20 @@ function Map({searchBarPosition}) {
           mapContainerClassName="map-container"
         >
           {mapLoaded &&
-            chargingStations.map((chargingStation) => (
-              <Marker position={chargingStation} icon={Pin}/>
-            ))}
+            <>
+              {chargingStations.map((chargingStation) => (
+                <Marker position={chargingStation} icon={Pin} onClick={() => setSelectedStation(chargingStation)}/>
+              ))}
+              {selectedStation && <InfoWindow position={{lat: selectedStation.lat + 0.0015, lng: selectedStation.lng}} onCloseClick={(event) => event.preventDefault()}>
+                <div>{selectedStation.name}</div>
+              </InfoWindow>}
+            </>}
         </GoogleMap>
       </div>
-      {searchBarPosition === "bottom" && (
+      {searchBarPosition === "bottom" && <>
         <SearchBar setCenter={setCenter} />
-      )}
-      {/* {location.pathname === "/startpoint" && (
         <SearchBarWithEndPoint setCenter={setCenter} />
-      )} */}
+      </>}
     </>
   );
 }

@@ -18,16 +18,16 @@ export default function Menu() {
       <nav className={`menu ${open ? "menu-show" : "menu-hide"}`}>
         <ul className="nav flex-column">
           <li className="nav-item">
-            <Link to="/profile" className="nav-link link-dark">Profile<ProfileIcon className='icon'/></Link>
+            <Link to="/profile" className="nav-link link-dark mt-2"><ProfileIcon className='icon'/>&nbsp;&nbsp;Profile</Link>
           </li>
           <li className="nav-item">
-            <Link to='/settings' className="nav-link link-dark">Settings<SettingsIcon className='icon' /></Link>
+            <Link to='/settings' className="nav-link link-dark"><SettingsIcon className='icon' />&nbsp;&nbsp;Settings</Link>
           </li>
           <li className="nav-item">
-            <Link to='/favourites' className="nav-link link-dark">Favourites<FavouritesIcon className='icon'/></Link>
+            <Link to='/favourites' className="nav-link link-dark"><FavouritesIcon className='icon'/>&nbsp;&nbsp;Favourites&nbsp;</Link>
           </li>
           <li className="nav-item">
-            <Link to='/home' className="nav-link link-dark">Logout<LogoutIcon className='icon'/></Link>
+            <Link to='/home' className="nav-link link-dark mb-2"><LogoutIcon className='icon'/>&nbsp;&nbsp;Logout</Link>
           </li>
         </ul>
       </nav>
