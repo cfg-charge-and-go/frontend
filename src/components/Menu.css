@@ -46,6 +46,11 @@ nav li {
   text-align: left;
 }
 
+.nav-item a:hover {
+  background-color: #EEE;
+  color: #000;  
+}
+
 .icon{
   margin-left: 10px;
 }
