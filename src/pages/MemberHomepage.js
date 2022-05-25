@@ -8,7 +8,7 @@ function MemberHomepage() {
 
   const routeChange = (event) => {
     event.preventDefault();
-    navigate("/routesuggestion");
+    navigate("/rating");
   };
 
   return (
@@ -16,7 +16,7 @@ function MemberHomepage() {
       <Hero loggedIn={true} />
       <MapContainer searchBarPosition={"bottom"}/>
       <div onClick={routeChange}>  
-        <Button title="Start"/>
+        <Button title="End Journey"/>
       </div>
     </div>
   );
