@@ -1,15 +1,37 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/buttons/Button';
 
 const LoginModal = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
   const navigate = useNavigate()
   const dismissButton = useRef()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    dismissButton.current?.click()
-    navigate("/memberhomepage")
+    console.log(email);
+    console.log(password);
+    const response = await fetch('http://127.0.0.1:5000/login', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        email: email,
+        password: password,
+      }),
+    })
+    const data = await response.json()
+    if (data.length === 0) {
+      setError("Login details incorrect")
+    } else {
+      setError("")
+      dismissButton.current?.click()
+      // Set a cookie or session info or something
+      navigate("/memberhomepage")
+    }
   }
 
   return (
@@ -21,12 +43,13 @@ const LoginModal = () => {
             <h5 className="modal-title mb-3" id="loginModalLabel">Welcome to Charge<span className="text-muted">&amp;</span>Go!</h5>
             <form onSubmit={handleSubmit}>
               <div className="form-group mb-3">
-                <input type="email" name="Email" className="form-control rounded-pill" id="Email" placeholder="Email" />
+                <input type="email" name="Email" className="form-control rounded-pill" id="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="form-group mb-3">
-                <input type="password" name="Password" className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" />
+                <input type="password" name="Password" className="form-control rounded-pill" id="Password" aria-describedby="passwordHelp" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
               </div>
               <Button title="Login" />
+              <p className="text-danger">{error}</p>
             </form>
           </div>
         </div>
