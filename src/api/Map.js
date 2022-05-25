@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow, DirectionsRenderer, DirectionsService, TrafficLayer } from "@react-google-maps/api";
 import { Compass } from "react-bootstrap-icons";
 import { getChargingStations } from "./api";
 import PlacesAutocomplete from "./PlacesAutocomplete";
@@ -34,8 +34,9 @@ function SearchBarWithEndPoint({ setPosition }) {
 function Map({searchBarPosition}) {
   const [center, setCenter] = useState({ lat: 51.5054, lng: 0.0235 });
   const [zoom, setZoom] = useState(13);
-  const [startPoint, setStartPoint] = useState({ lat: 51.49, lng: -0.01 });
-  const [endPoint, setEndPoint] = useState({ lat: 51.52, lng: 0.05 });
+  const [startPoint, setStartPoint] = useState();
+  const [endPoint, setEndPoint] = useState();
+  const [directions, setDirections] = useState(null);
   const [chargingStations, setChargingStations] = useState([]);
   const [selectedStation, setSelectedStation] = useState();
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -48,9 +49,11 @@ function Map({searchBarPosition}) {
   }, [center]);
 
   useEffect(function() {
-    setCenter({ lat: (startPoint.lat + endPoint.lat) / 2, lng: (startPoint.lng + endPoint.lng) / 2});
-    const scale = Math.max(Math.abs(startPoint.lat - endPoint.lat), Math.abs(startPoint.lng - endPoint.lng));
-    setZoom(Math.floor(Math.exp(-scale + 9/4) + 5));
+    if (startPoint && endPoint) {
+      setCenter({ lat: (startPoint.lat + endPoint.lat) / 2, lng: (startPoint.lng + endPoint.lng) / 2});
+      const scale = Math.max(Math.abs(startPoint.lat - endPoint.lat), Math.abs(startPoint.lng - endPoint.lng));
+      setZoom(Math.floor(Math.exp(-scale + 9/4) + 5));
+    }
   }, [startPoint, endPoint]);
 
   return (
@@ -64,12 +67,26 @@ function Map({searchBarPosition}) {
         >
           {mapLoaded &&
             <>
+              <TrafficLayer />
               {chargingStations.map((chargingStation) => (
                 <Marker position={chargingStation} icon={Pin} onClick={() => setSelectedStation(chargingStation)}/>
               ))}
               {selectedStation && <InfoWindow position={{lat: selectedStation.lat + 0.0015, lng: selectedStation.lng}}>
                 <div>{selectedStation.name}</div>
               </InfoWindow>}
+              {startPoint && endPoint && <DirectionsService
+                  options={{
+                    destination: endPoint,
+                    origin: startPoint,
+                    travelMode: "DRIVING"
+                  }}
+                  callback={(response) => {setDirections(response)}}
+                />}
+              {startPoint && endPoint && directions && <DirectionsRenderer
+                  options={{
+                    directions: directions
+                  }}
+                />}
             </>}
         </GoogleMap>
       </div>
