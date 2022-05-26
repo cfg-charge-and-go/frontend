@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../components/buttons/Button";
 
 const SignupModal = () => {
@@ -8,38 +7,35 @@ const SignupModal = () => {
   const [date_of_birth, setDateOfBirth] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [car_reg, setCarReg] = useState("")
   const [error, setError] = useState("")
-  const navigate = useNavigate()
   const dismissButton = useRef()
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(first_name);
-    console.log(last_name);
-    console.log(date_of_birth);
-    console.log(email);
-    console.log(password);
-    const response = await fetch('http://127.0.0.1:5000/signup', {
+    const response = await fetch('http://127.0.0.1:4000/signup', {
       method: "POST",
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        firstname: first_name,
-        lastname: last_name,
-        birthday: date_of_birth,
+        first_name: first_name,
+        last_name: last_name,
+        date_of_birth: date_of_birth,
         email: email,
         password: password,
+        car_reg: car_reg,
       }),
     })
     const data = await response.json()
-    if (data.length === 0) {
-      setError("User information missing. Please try again")
+    console.log(data)
+    if (data.status !== "success") {
+      setError("User information missing or invalid. Please try again")
     } else {
       setError("User Signed up!")
-      dismissButton.current?.click()
-      // Set a cookie or session info or something
-      navigate("/memberhomepage")
+      setTimeout(function() {
+        dismissButton.current?.click()
+      }, 2000)
     }
   }
 
@@ -68,7 +64,7 @@ const SignupModal = () => {
                 <small id="passwordHelp" className="form-text text-muted">6-character minimum; case sensitive.</small>
               </div>
               <div className="form-group mb-3">
-                <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" />
+                <input type="text" name="CarRegNumber" className="form-control rounded-pill" id="CarRegNumber" placeholder="Car registration number" onChange={(e) => setCarReg(e.target.value)} />
               </div>
               <Button title="Register" />
               <p className="text-danger">{error}</p>

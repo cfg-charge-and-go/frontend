@@ -1,5 +1,6 @@
-// import React, { useState } from "react";
-// import {Link} from 'react-router-dom'
+import React from "react";
+import { Link, useNavigate } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { 
   BsPersonCircle as ProfileIcon,
@@ -7,12 +8,18 @@ import {
   BsFillHeartFill as FavouritesIcon,
   BsBoxArrowInLeft as LogoutIcon
   } from "react-icons/bs";
-// import { FaHeart } from "react-icons/fa";
 import './Navbar.css';
 
-import React from 'react'
-
 export default function Navbar() {
+  const navigate = useNavigate()
+  /* eslint-disable no-unused-vars */
+  const [cookies, setCookie, removeCookie] = useCookies(['userId'])
+
+  function logout() {
+    removeCookie('userId')
+    navigate('/home')
+  }
+
   return (
     <>
       <div className="dropdown">
@@ -20,10 +27,10 @@ export default function Navbar() {
           User Dropdown
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a className="dropdown-item" href="#"><ProfileIcon/>Profile</a>
-          <a className="dropdown-item" href="#"><SettingsIcon/>Settings</a>
-          <a className="dropdown-item" href="#"><FavouritesIcon/>Favourites</a>
-          <a className="dropdown-item" href="#"><LogoutIcon/>Log out</a>
+          <Link className="dropdown-item" to="/profile"><ProfileIcon/>Profile</Link>
+          <Link className="dropdown-item" to="/settings"><SettingsIcon/>Settings</Link>
+          <Link className="dropdown-item" to="/favourites"><FavouritesIcon/>Favourites</Link>
+          <button className="dropdown-item" onClick={logout}><LogoutIcon/>Log out</button>
         </div>
       </div>
     </>

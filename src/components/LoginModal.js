@@ -1,11 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import Button from '../components/buttons/Button';
 
 const LoginModal = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  /* eslint-disable no-unused-vars */
+  const [cookies, setCookie, removeCookie] = useCookies(['userId'])
   const navigate = useNavigate()
   const dismissButton = useRef()
 
@@ -13,7 +16,7 @@ const LoginModal = () => {
     event.preventDefault();
     console.log(email);
     console.log(password);
-    const response = await fetch('http://127.0.0.1:5000/login', {
+    const response = await fetch('http://127.0.0.1:4000/login', {
       method: "POST",
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -29,7 +32,7 @@ const LoginModal = () => {
     } else {
       setError("")
       dismissButton.current?.click()
-      // Set a cookie or session info or something
+      setCookie("userId", data.id)
       navigate("/memberhomepage")
     }
   }
