@@ -41,15 +41,15 @@ export default function Profile() {
               </tr>
               <tr>
                 <th scope="row" className="pt-4">Vehicle registration</th>
-                <td className="pt-4">{userInfo.vehicle.registrationNumber}</td>
+                <td className="pt-4">{userInfo.vehicle?.registrationNumber}</td>
               </tr>
               <tr>
                 <th scope="row" className="pt-4">Vehicle make</th>
-                <td className="pt-4">{userInfo.vehicle.make}</td>
+                <td className="pt-4">{userInfo.vehicle?.make}</td>
               </tr>
               <tr>
                 <th scope="row" className="pt-4">Vehicle colour</th>
-                <td className="pt-4">{userInfo.vehicle.colour}</td>
+                <td className="pt-4">{userInfo.vehicle?.colour}</td>
               </tr>
               </tbody>
           </table>
