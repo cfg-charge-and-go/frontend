@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import Button from "../components/buttons/Button";
 
 const SignupModal = () => {
-  const [firstname, setFirstName] = useState("")
-  const [lastname, setLastName] = useState("")
-  const [birthday, setBirthday] = useState("")
+  const [first_name, setFirstName] = useState("")
+  const [last_name, setLastName] = useState("")
+  const [date_of_birth, setDateOfBirth] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
@@ -14,9 +14,9 @@ const SignupModal = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(firstname);
-    console.log(lastname);
-    console.log(birthday);
+    console.log(first_name);
+    console.log(last_name);
+    console.log(date_of_birth);
     console.log(email);
     console.log(password);
     const response = await fetch('http://127.0.0.1:5000/signup', {
@@ -25,16 +25,16 @@ const SignupModal = () => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        firstname: firstname,
-        lastname: lastname,
-        birthday: birthday,
+        firstname: first_name,
+        lastname: last_name,
+        birthday: date_of_birth,
         email: email,
         password: password,
       }),
     })
     const data = await response.json()
     if (data.length === 0) {
-      setError("Login details incorrect")
+      setError("User information missing. Please try again")
     } else {
       setError("User Signed up!")
       dismissButton.current?.click()
@@ -58,7 +58,7 @@ const SignupModal = () => {
                 <input type="text" name="LastName" className="form-control rounded-pill" id="LastName" placeholder="Last name" onChange={(e) => setLastName(e.target.value)} />
               </div>
               <div className="form-group mb-3">
-                <input type="date" name="Birthday" className="form-control rounded-pill" id="Birthday" placeholder="Birthday DD/MM/YY" onChange={(e) => setBirthday(e.target.value)} />
+                <input type="date" name="Birthday" className="form-control rounded-pill" id="Birthday" placeholder="Birthday DD/MM/YY" onChange={(e) => setDateOfBirth(e.target.value)} />
               </div>
               <div className="form-group mb-3">
                 <input type="email" name="Email" className="form-control rounded-pill" id="Email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
