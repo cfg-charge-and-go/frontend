@@ -6,7 +6,7 @@ export default function Favourites() {
     <div>
       <div className="text-center py-5">
       <Hero loggedIn={true} />
-      <h3>@Username&apos;s Favourites</h3>
+      <h3>Sarah&apos;s Favourites</h3>
       <FavCard />
       </div>
     </div>

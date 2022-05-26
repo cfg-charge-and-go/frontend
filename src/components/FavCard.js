@@ -19,8 +19,8 @@ export default function FavCard() {
       <div className="card-product mt-4 mb-4">
         <img src={ ChargeStation1 } alt="electric car charging station"/>
         <div className="card-product-infos">
-          <h2>SSE Greenwatt Way</h2>
-          <p>SL1 2UD - <strong>Rapid</strong></p>
+          <h2>Sandon P&amp;R 1</h2>
+          <p>CM2 7RU - <strong>Rapid</strong></p>
           <p className="iconline"><InfoIcon />&nbsp;&nbsp;<CommentIcon />&nbsp;&nbsp;<FoodIcon />&nbsp;&nbsp;<ParkIcon /></p>
         </div>
       </div>
