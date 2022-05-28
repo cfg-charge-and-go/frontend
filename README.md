@@ -7,12 +7,12 @@
 
 <p align="center">Built with :heart: by cfg-ford</p>
 
-
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 ## 
 
   
 
-### Authors and acknowledgements:
+### Authors:
 
 
 [ayankhalif](https://github.com/ayankhalif)<br>
@@ -24,12 +24,11 @@
 
 
 
-### `npm test`
+### Quick start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On your terminal run `npm install`
 
-### `npm run build`
+### How to use this app
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -77,4 +76,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
