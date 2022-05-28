@@ -3,11 +3,12 @@
 
 <h3 align="center">Simplifying the electric vehicle experience</h3>
 
-<h4 align="center">This app identifies suitable charging stations for electric vehicle owners along their planned routes.</h4>
+<h4 align="center">This mobile app identifies suitable charging stations for electric vehicle owners along their planned routes.</h4>
 
 <p align="center">Built with :heart: by cfg-ford</p>
 
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license)
+
 ## 
 
   
@@ -23,56 +24,41 @@
 [egrfly](https://github.com/orgs/cfg-charge-and-go/people/egrfly)<br>
 
 
+### How to use this app
+
+This app was built using React, Pycharm, and MySQL Workbench on a localhost. 
+You will need to ask for permissions to acquire personal access tokens to utilize the following APIs:<br> 
+Charging station locator - [Charge Points](https://chargepoints.dft.gov.uk/api/help)<br> 
+UK car registration information - [DVLA Vehicle Enquiry Service](https://developer-portal.driver-vehicle-licensing.api.gov.uk/availableapis.html#current-available-apis)<br>
+Geolocator - [Google Maps](https://react-google-maps-api-docs.netlify.app/).
+
+You will also need to use your own MySQL Workbench username and password to create the database that is located in the backend folder called *authentication_management.py*. Use the dummy data in sql_scripts to build the database. 
+
+**Note: As of now, the route suggestion is for starting point London, end point Ipswich only. We welcome contributors to help this project grow.** 
 
 ### Quick start
 
-On your terminal run `npm install`
+On your terminal run `npm install` to retrieve package dependencies and `npm run` to open the charge-and-go react app.
 
-### How to use this app
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Backend
+Pycharm Installations:<br>
+• flask<br>
+• jsonify<br> 
+• requests<br>
+• my-sql-connector<br>
+• cors<br>
+• session<br>
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As you open the app, you will be greeted with the Welcome Page, click "get moving" to start. Non-registered members can input a UK address and see charging stations nearby:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="180" alt="welcome" src="https://user-images.githubusercontent.com/102037222/170840808-2d10008a-d7d8-4d7b-bc2a-71da7a626049.png"> <img width="180" alt="homepage" src="https://user-images.githubusercontent.com/102037222/170840944-cc086d90-9009-4bbc-85bd-1b2c1db15ce0.png">
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Languages and Programmes
+<p align="center"><a href="https://getbootstrap.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="34" height="34"/> </a> 
+<a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="34" height="34"/> </a> <a href="https://www.figma.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="34" height="34"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="34" height="34"/> </a> <a href="https://heroku.com" target="_blank"> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="34" height="34"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="34" height="34"/> </a> <a href="https://www.mysql.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="34" height="34"/> </a><a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="34" height="34"/> </a> <a href="https://reactjs.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="34" height="34"/></a>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
+  </p>
 
