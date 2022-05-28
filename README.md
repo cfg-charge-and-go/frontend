@@ -1,18 +1,28 @@
-# Getting Started with Create React App
+# <p align="center"><img width="277" alt="logo" src="https://user-images.githubusercontent.com/102037222/170836531-c7a6e416-c6b4-46c9-a044-1e58db6ca287.png"></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<h3 align="center">Simplifying the electric vehicle experience</h3>
 
-In the project directory, you can run:
+<h4 align="center">This app identifies suitable charging stations for electric vehicle owners along their planned routes.</h4>
 
-### `npm start`
+<p align="center">Built with :heart: by cfg-ford</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 
+
+  
+
+### Authors and acknowledgements:
+
+
+[ayankhalif](https://github.com/ayankhalif)<br>
+[IoanaCatalina](https://github.com/IoanaCatalina)<br>
+[itsrosita](https://github.com/itsrosita)<br>
+[NatAmanfo](https://github.com/NatAmanfo)<br>
+[ZhaonanZhang](https://github.com/ZhaonanZhang)<br>
+[egrfly](https://github.com/orgs/cfg-charge-and-go/people/egrfly)<br>
+
+
 
 ### `npm test`
 
