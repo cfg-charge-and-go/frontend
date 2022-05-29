@@ -30,7 +30,7 @@ This app was built using React, Flask, and MySQL Workbench on a localhost.
 You will need to ask for permissions to acquire personal access tokens to utilize the following APIs:<br> 
 Charging station locator - [UK National Charge Point Registry](https://chargepoints.dft.gov.uk/api/help)<br> 
 UK car registration information - [DVLA Vehicle Enquiry Service](https://developer-portal.driver-vehicle-licensing.api.gov.uk/availableapis.html#current-available-apis)<br>
-Google Map Support API - [@react-google-maps/api](https://react-google-maps-api-docs.netlify.app/).<br>
+Google Map Support API - [@react-google-maps/api](https://react-google-maps-api-docs.netlify.app/)<br>
 Location Autocomplete - [Google Search Places Autocomplete](https://github.com/wellyshen/use-places-autocomplete)<br>
 Geolocator - [Places Library Google Maps](https://developers.google.com/maps/documentation/javascript/places)<br>
 
