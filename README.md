@@ -28,26 +28,26 @@
 
 This app was built using React, Flask, and MySQL Workbench on a localhost. 
 You will need to ask for permissions to acquire personal access tokens to utilize the following APIs:<br> 
-Charging station locator - [Charge Points](https://chargepoints.dft.gov.uk/api/help)<br> 
+Charging station locator - [UK National Charge Point Registry](https://chargepoints.dft.gov.uk/api/help)<br> 
 UK car registration information - [DVLA Vehicle Enquiry Service](https://developer-portal.driver-vehicle-licensing.api.gov.uk/availableapis.html#current-available-apis)<br>
-Geolocator - [Google Maps](https://react-google-maps-api-docs.netlify.app/).
+Geolocator - [Google Maps](https://react-google-maps-api-docs.netlify.app/).<br>
 
-You will also need to use your own MySQL Workbench username and password to create the database that is located in the backend folder called *authentication_management.py*. Use the dummy data in sql_scripts to build the database. 
 
-**Note: As of now, the route suggestion is for starting point London, end point Ipswich only. We welcome contributors to help this project grow.** 
+You will also need to use your own MySQL Workbench username and password to create the database that is located in the backend folder called *authentication_management.py*. Use the charge_and_go script to build the database. 
+
+**Note: We welcome contributors to help this project grow.** 
 
 ### Quick start
 
-On your terminal run `npm install` to retrieve package dependencies and `npm run` to open the charge-and-go react app.
+Clone the repository; ensure you have node.js installed on your choosen IDE. On your terminal run `npm install` to retrieve package dependencies and `npm start` to open the charge-and-go react app.
 
 ### Backend
-Pycharm Installations:<br>
+Python Packages, pip install + *package_name*:<br>
 • flask<br>
 • jsonify<br> 
 • requests<br>
 • my-sql-connector<br>
 • cors<br>
-• session<br>
 
 ## Learn More
 
