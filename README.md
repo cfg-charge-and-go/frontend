@@ -26,7 +26,7 @@
 
 ### How to use this app
 
-This app was built using React, Pycharm, and MySQL Workbench on a localhost. 
+This app was built using React, Flask, and MySQL Workbench on a localhost. 
 You will need to ask for permissions to acquire personal access tokens to utilize the following APIs:<br> 
 Charging station locator - [Charge Points](https://chargepoints.dft.gov.uk/api/help)<br> 
 UK car registration information - [DVLA Vehicle Enquiry Service](https://developer-portal.driver-vehicle-licensing.api.gov.uk/availableapis.html#current-available-apis)<br>
