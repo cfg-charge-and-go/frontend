@@ -3,7 +3,7 @@
 
 <h3 align="center">Simplifying the electric vehicle experience</h3>
 
-<h4 align="center">This mobile app identifies suitable charging stations for electric vehicle owners along their planned routes.</h4>
+<h4 align="center">This app identifies suitable charging stations for electric vehicle owners along their planned routes.</h4>
 
 <p align="center">Built with :heart: by cfg-ford</p>
 
